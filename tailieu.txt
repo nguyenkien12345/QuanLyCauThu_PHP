@@ -1,0 +1,13 @@
+<!-- Trong bài viết này các bạn cần nắm được một số ý chính sau: -->
+<!-- Khái niệm về CURD, thực ra cũng chẳng có gì, chỉ cần nhớ nó là viết tắt của Creat, Update, Read, Delete hay thêm, sửa, xóa, đọc dữ liệu từ database. -->
+<!-- Cấu trúc các câu lệnh SQL INSERT, UPDATE, DELETE, SELECT, có một mẹo là các bạn nên viết hoa các từ khóa của SQL và viết in thường các giá trị cũng như tên cột, tên bảng..., luôn đặt các giá trị chuỗi trong cặp dấu nháy đơn hoặc nháy đôi, nên đặt các tên bảng, tên cột trong cặp dấu `( dưới nút Esc). -->
+<!-- Gửi và nhận dữ liệu từ form thông qua hai biến $_GET và $_POST, trong bài này mình cũng hướng dẫn các bạn một mẹo nhỏ để truyền dữ liệu thông qua url -->
+
+// biến $_GET['id'] ở đâu mà có ? Ở bước gắn dữ liệu vào biến $html ở file index.php, mình có gắn link vào hai ô 
+// edit và delete như sau:
+// <td><a href="edit.php?id='.$value['id'].'">Edit</a></td>
+// <td><a href="delete.php?id='.$value['id'].'"> Delete</a></td>
+// Các bạn để ý đoạn mã href="edit.php?id='.$value['id'].'" mình đã truyền luôn id của cầu thủ trên url và nó sẽ được truyền đến file edit.php thông qua biến $_GET['id'].
+// Từ biến $id này ta có thể sử dụng câu SQL và lấy thông tin của cầu thủ có id đó.
+// Thứ hai là phần action của form, mình vẫn để là process.php mà phương thức thêm cầu thủ sử dụng, sở dĩ mình sử dụng chung file này để xử lý vì phương thức chỉnh sửa cũng có các bược validate giống với thêm mới.
+// Cuối cùng là khi đã có thông tin cầu thủ lưu trong biến $info, mình sẽ đổ nó ra các ô nhập liệu bằng thuộc tính value của thẻ input
